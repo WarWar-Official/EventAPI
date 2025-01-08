@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app/
 
+RUN python mkdir static
 RUN python manage.py collectstatic --noinput
 RUN python3 manage.py makemigrations EventAPI
 RUN python3 manage.py migrate
