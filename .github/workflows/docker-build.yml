@@ -3,33 +3,29 @@ name: Build and Push Docker image to GHCR
 on:
   push:
     branches:
-      - main  # Змінити на вашу основну гілку
+      - main
   pull_request:
     branches:
-      - main  # Змінити на вашу основну гілку
+      - main 
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Крок 1: Клонування репозиторію
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Крок 2: Логін до GitHub Container Registry
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v2
         with:
           username: ${{ github.actor }}
-          password: ${{ secrets.GH_DOCKER_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Крок 3: Побудова Docker образу
       - name: Build Docker image
         run: |
           docker build -t ghcr.io/${{ github.repository }}/EventAPI:latest .
 
-      # Крок 4: Публікація Docker образу в GitHub Container Registry
       - name: Push Docker image to GHCR
         run: |
           docker push ghcr.io/${{ github.repository }}/EventAPI:latest
