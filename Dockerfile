@@ -9,10 +9,11 @@ WORKDIR /app
 COPY requirements.txt /app/
 
 RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /app/
+
 RUN python3 manage.py makemigrations EventAPI
 RUN python3 manage.py migrate
-
-#COPY . /app/
 
 EXPOSE 8000
 
