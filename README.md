@@ -89,7 +89,7 @@ Simple all in one REST-Api that manages events (like conferences, meetups, etc.)
 
 ## API Documentation
 
-- API documentation is available at [[Swagger UI URL]](http://localhost:8000/swagger/).  
+- API documentation is available at [[Swagger UI URL]](http://127.0.0.1:8000/swagger/).  
 
 ---
 
