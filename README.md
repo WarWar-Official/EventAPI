@@ -37,8 +37,8 @@ Simple all in one REST-Api that manages events (like conferences, meetups, etc.)
 
 ### Prerequisites
 
-- Install [Python](https://www.python.org/) (version X.X.X or later).  
-- Install [Docker](https://www.docker.com/) (optional).  
+- Install [Python](https://www.python.org/) 
+- Install [Docker](https://www.docker.com/)
 - Clone this repository:  
   ```bash
   git clone https://github.com/warwar-official/event_api.git
